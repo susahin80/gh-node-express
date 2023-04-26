@@ -4,14 +4,14 @@ on:
     branches:
       - main
 env:
-  MONGODB_CLUSTER_ADDRESS: cluster0.hcgip.mongodb.net
-  MONGODB_USERNAME: github-user
-  MONGODB_PASSWORD: RPw778SvwWvGN7Qz
+  MONGODB_CLUSTER_ADDRESS:  ${{ secrets.MONGODB_USERNAME }}
+  MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+  MONGODB_PASSWORD:  ${{ secrets.MONGODB_PASSWORD }}
   MONGODB_DB_NAME: gha-demo
   PORT: 8080
 jobs:
   info:
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     steps:
       - run: echo pwd
       - run: echo $RUNNER_OS
